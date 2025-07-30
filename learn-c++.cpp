@@ -261,11 +261,16 @@ void print14(int n){
 
 }
 
-void print15(int n){
+void print16(int n){
     for(int i=0; i<n;i++){
-        for(char ch='A';ch<= 'A'+(n-i-1);)
+        char ch='A'+i;
+        for(int j=0;j<=i;j++){
+            cout<<ch<<" ";
+        }
+        cout<<endl;
     }
 }
+
 //this main function dont need to write in any compiler such as leetcode,etc
 int main(){
     int n;
