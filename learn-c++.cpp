@@ -270,12 +270,62 @@ void print16(int n){
         cout<<endl;
     }
 }
+// void print17(int n ){
+//     for(int i =0; i<n;){
+//         cout<<"";
+
+//     }
+//     for(int j=0; j<n-n-1;j++){
+
+//     }
+//     char ch
+// }
+
+int print19(int n){
+    int iniS=0;
+    for(int i=0;i<n;i++){
+        //stars
+        for(int j=1;j<=n-i;j++){
+            cout<<"*";
+        }
+        //spaces
+        for(int j=0;j<iniS;j++){
+            cout<<"*";
+        }
+        //stars
+        for(int j=1; i<=n;j++){
+            cout<<"*";
+        }
+        iniS+=2;
+        cout<<endl;
+    }
+    iniS=8;
+    for(int i=1;i<=n;i++){
+        //stars
+        for(int j=1;j<=i;j++){
+            cout<<"*";
+        }
+        //spaces
+        for(int j=0;j<iniS;j++){
+            cout<<"*";
+        }
+        //stars
+        for(int j=1; i<=n;j++){
+            cout<<"*";
+        }
+        iniS-=2;
+        cout<<endl;
+
+    }
+}
+
+
 
 //this main function dont need to write in any compiler such as leetcode,etc
 int main(){
     int n;
     cin>>n;
-    print7(n);   
+    print19(n);   
 
 }
 
