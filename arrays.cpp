@@ -74,3 +74,16 @@ while(left< right){
     else right--;
 }
 return "NO";
+
+
+//intro to recursion--
+ void print(){
+    cout<<1<< endl;
+    print();
+ }
+ int main(){
+    print();
+    return 0;
+ }
+ //.. multiple function scalled in the memory(function calls in the memory)
+ // this is called STACK OVERFLOW (segmentation)
