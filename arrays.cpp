@@ -90,3 +90,17 @@ return "NO";
 
  //print name n times using recursion
  //(in notebook)
+ 
+ //print 1 to n using recursion-->
+ void func(int n, int i){
+    if(i>n) return;
+
+    cout<<i<<endl;
+    func(i+1,n);
+    
+ }
+ int main(){
+    int n=4;
+    func(1,n)
+    return 0;
+ }
