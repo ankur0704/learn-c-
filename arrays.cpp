@@ -207,3 +207,41 @@ int main(){
     }
     return 0;
 }
+
+
+//count frequency of each element in the array
+// using 2 loops
+//1st loop point to one element and 2nd loop finds that element in the array.
+void countFreq(int arr[], int n ){
+vector<bool> visited(n,false);
+
+for(int i=0; i<n; i++){
+    if(visited[i]== true)
+    continue;
+
+    //count frequency
+    int count=1;
+    for(int j=i+1; j<n; j++){
+        if(arr[i]==arr[j]){
+            visited[j]=true;
+            count++;
+        }
+    }
+    cout<< arr[i]<<" "<< count<< endl;
+}
+}
+
+//now using Map
+
+void freq(int arr[], int n){
+    unordered_map<int, int>map;
+
+    for(int i=0; i<n;i++){
+        map[arr[i]]++;
+
+        //traverse through map and print freq
+        for(auto x:map){
+            cout<<x.first<<" "<< x.second<< endl;
+        }
+    }
+}
