@@ -401,3 +401,23 @@ vector<int> quickSort(vector<int> arr){
     return arr;
 }
 
+
+//dutch national flag algorithm--> no. of 0s 1s and 2s
+//tc=o(n)
+//sc=o(1)
+void sortCOlor(vector<int>&nums){
+    int n=nums.size();
+    int low=0, mid=0, high=n-1;
+
+    while(mid<=high){
+        if(nums[mid]==0){
+            swap(nums[low],nums[mid]);
+            mid++; low++;
+        }else if (nums[mid]==1){
+            mid++;
+        }else{
+            swap(nums[high],nums[mid]);
+            high--;
+        }
+    }
+}
