@@ -11,10 +11,19 @@ class Teacher{
 
     //parametrized
     Teacher(string n, string d, string s, double sal){
+        this-> name=name; 
         name=n;
         dept=d;
         subj=s;
         salary=sal;
+    }
+    //copy constructor
+    Teacher(Teacher &orgObj){    //pass by reference
+        cout<<"i am custom cpy constructor"<< endl;
+        this-> name= orgObj.name;
+        this-> dept= orgObj.dept; 
+        this->subj= orgObj.subj;
+        this-> salary= orgObj.salary;
     }
 
 
@@ -51,9 +60,10 @@ class Acount{
 };
 
 
+
 int main(){
-    Teacher
-    Teacher t1; //constrictor is called // t1 is object
+    Teacher t1("Ankur" "CS" "c++",5000);
+    Teacher t1; //constrictor is called    // t1 is object
     t1.name="Ankur";
     t1.subj="Maths";
     t1.setSalary=(5000);

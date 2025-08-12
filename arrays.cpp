@@ -520,3 +520,12 @@ return a;
     }
 }
 }
+
+//no of subarrays with sum k
+for(i =0; i<n;i++){
+    for(i=j; j<n; j++){
+        sum=0
+        for()
+    }
+}
+
