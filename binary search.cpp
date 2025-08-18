@@ -149,6 +149,60 @@ public:
 
 //BINARY SEARCH ON ANSWERS
 //find sqrt of an integer
+int Sqrt(int n){
+    int low=1, high=n;
+while(low<= high){
+    long long mid=(low+high)/2;
+    long long val= (mid*mid);
+    if(val<=n){
+        low=mid+1;
+    }else{
+        high=mid-1;
+    }
+}
+return high;
+
+}
+
+//find nth root of number
+//....remaining
+
+//koko eating bananas
+class Solution {
+public:
+    int findMax(vector<int> &v) {
+        int maxi = INT_MIN;
+        for (int x : v) {
+            maxi = max(maxi, x);
+        }
+        return maxi;
+    }
+
+    long long calculateTotalHours(vector<int>& v, int h) {
+        long long totalH = 0;
+        for (int x : v) {
+            totalH += (x + h - 1) / h;  // ceil division
+        }
+        return totalH;
+    }
+
+    int minEatingSpeed(vector<int>& piles, int h) {
+        int low = 1, high = findMax(piles);
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            long long totalH = calculateTotalHours(piles, mid);
+
+            if (totalH <= h) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
+    }
+};
+
 
 
 
