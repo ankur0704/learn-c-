@@ -144,3 +144,11 @@ public:
     }
 };   //tc - O(logN)
 
+
+
+
+//BINARY SEARCH ON ANSWERS
+//find sqrt of an integer
+
+
+
