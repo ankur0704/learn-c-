@@ -203,6 +203,47 @@ public:
     }
 };
 
+//painter partition problem / split array largest sum    (same concept as ALLOCATE BOOKS PROBLEM)
+//.. to solve
+
+
+//search in 2d matrix
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& mat, int target) {
+        int n = mat.size();         // number of rows in matrix
+        int m = mat[0].size();      // number of columns in matrix
+
+        // Treat the 2D matrix as a 1D sorted array of length n*m
+        int low = 0;                // starting index of virtual 1D array
+        int high = n * m - 1;       // ending index of virtual 1D array
+
+        // Perform binary search
+        while (low <= high) {
+            int mid = (low + high) / 2;   // middle index in virtual 1D array
+
+            // Convert 1D index (mid) back into 2D coordinates (row, col)
+            int row = mid / m;            // row index in matrix
+            int col = mid % m;            // column index in matrix
+
+            // Check if the middle element is the target
+            if (mat[row][col] == target) 
+                return true;              // target found → return true
+
+            // If middle element is smaller, search right half
+            else if (mat[row][col] < target) 
+                low = mid + 1;
+
+            // If middle element is larger, search left half
+            else 
+                high = mid - 1;
+        }
+
+        // If we exit the loop, target is not present
+        return false;
+    }  
+};
+
 
 
 
