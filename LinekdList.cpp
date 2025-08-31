@@ -44,15 +44,34 @@ int checkIfPresent(Node* head, int val){
     }
     return 0;
 }
+void print(Node* head){
+    while(head!= NULL){
+        cout<<head-> data<<" ";
+        head=head->next;
+    }
+    cout<<endl;
+}
+
+Node* removesHead(Node* head){
+    if(head==NULL) return head;
+    Node* temp=head;
+    head-head->next;
+    delete temp;
+    return head;
+
+}
 
 
 int main(){                                          //
     vector<int> arr={1,5,8,7};
     Node* head= converArrToLL(arr);
+    head=removesHead(head);
+    print(head);
+
     cout<<head->data;
     // Node* y= new Node(arr[0], nullptr);
     // cout<<y; 
-    cout< checkIfPresent(head, 15);
+    cout<< checkIfPresent(head, 15);
     //traversal in LL
     Node* temp=head;
     while(temp){
