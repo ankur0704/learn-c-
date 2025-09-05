@@ -289,6 +289,64 @@ public:
 };
 
 
+//Find Peak Element (2D Matrix)
+pseudo code:-
+fn(mat,n,m){
+    low=0, high=m-1;
+    while(low<=high){
+        mid=(low+high)/2
+        row=maxElem(mat,n,m,mid)
+
+        left= mid-1>=0 ? mat[row][mid-1]:-1;
+        right= mid+1<m ? mat[row][mid+1]: -1;
+
+        if(mat[row][mid]>left && >right)
+        return (row,mid);
+
+        else if 
+        else low=mid+1;
+    }
+    return(-1,-1);
+}
+
+
+class Solution {
+public:
+
+int findMaxIndex(vector<vector<int>>& mat, int n, int m, int col){       //function.. it scans all rows to find row idx with max val in col.
+    int maxValue=-1;                     //O(n) time
+    int index=-1;
+    for(int i=0; i<n; i++){
+        if(mat[i][col]> maxValue){
+            maxValue = mat[i][col];
+            index=i;
+        }
+    }
+    return index;
+}
+    vector<int> findPeakGrid(vector<vector<int>>& mat) {
+        int n= mat.size();
+        int m= mat[0].size();
+        int low=0, high=m-1;
+
+        while(low<= high){
+            int mid=(low+high)/2;
+            int maxRowIndex= findMaxIndex(mat,n,m,mid);  //max element in this col
+            int left=mid-1>=0? mat[maxRowIndex][mid-1]: -1;  //comparing this max el with immediate left and right
+            int right= mid+1<m ? mat[maxRowIndex][mid+1]: -1;
+            if(mat[maxRowIndex][mid]> left && mat[maxRowIndex][mid]>right){   //peak condition
+                return{maxRowIndex, mid};
+            }
+            else if(mat[maxRowIndex][mid]< left){
+                high=mid-1;    //move to left half
+            }else{
+                low=mid+1;    //move to right half
+            }
+        }
+        return {-1,-1};  //if no peak 
+        
+    }   //TC--> O(logm x n)
+};
 
 
 
