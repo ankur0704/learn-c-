@@ -244,6 +244,51 @@ public:
     }  
 };
 
+//search in 2D matrix II(search in row and column wise sorted matrix)
+//brute force
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int n= matrix.size(), m= matrix[0].size();
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(matrix[i][j] == target)
+                return true;
+            }
+        }
+        return false;
+    }
+}; //tc- O(mxn)
+
+row=0, col=m-1
+while(row<n && col>=0){
+    if(mat[row][col])
+    return(row,col)
+}else if(mat[row][col]<target)
+row++;
+else{
+    col--;
+}
+return (-1,-1);
+
+
+//optimal sol
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int n= matrix.size(), m=matrix[0].size();
+        int row=0, col=m-1;
+        while(row<n && col>= 0){
+            if(matrix[row][col]==target) return true;
+            else if(matrix[row][col]<target) row++;
+            else col--;
+        }
+        return false;
+    }
+};
+
+
 
 
 

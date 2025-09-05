@@ -55,7 +55,7 @@ void print(Node* head){
 Node* removesHead(Node* head){
     if(head==NULL) return head;
     Node* temp=head;
-    head-head->next;
+    head=head->next;
     delete temp;
     return head;
 
