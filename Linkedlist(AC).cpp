@@ -146,3 +146,25 @@ int main(){
     ll.printLL();
     return 0;
 }
+
+
+//reverse a LL(LEETCODE 206)
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = NULL;   //At the start, there’s no node before the head, so the "previous" pointer is NULL.
+        ListNode* curr = head; //Start traversal from the head node.
+        ListNode* next = NULL;  //Temporary pointer to store the next node during traversal
+
+        while(curr != NULL){      //We process nodes until curr becomes NULL (i.e., end of list).
+            next = curr-> next;   //Example: If curr is 1, then next = 2.
+            curr-> next= prev;    //Example: 1 → NULL instead of 1 → 2.
+
+            prev= curr;
+            curr= next;
+
+        }
+        return prev;
+    }
+};
