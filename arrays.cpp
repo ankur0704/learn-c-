@@ -760,7 +760,7 @@ void extremePrint(int arr[], int size){
     int right= size-1;
 
     while(left<= right){
-        if(left==right){
+        if(left==right){            //for odd case
             cout<<arr[left]<<endl;
         }else{
             cout<<arr[left]<<endl;
@@ -774,7 +774,7 @@ void extremePrint(int arr[], int size){
 }
 
 int main(){
-    int arr[5]={13,4,3,12,3,};
+    int arr[5]={13,4,3,12,3,};   
     int size=6;
 
     extremePrint(arr, size);
