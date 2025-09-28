@@ -529,3 +529,131 @@ for(i =0; i<n;i++){
     }
 }
 
+//taking input in array
+int arr[5];
+int n=5;
+for(int i=0; i<n; i++){
+    cout<<"Enter the value of index " << i << ": ";
+    cin>> arr[i];
+    cout<<endl;
+    
+}
+
+//printing an array
+cout<<"printing the array"<<endl;
+for(int i =0; i<n; i++){
+    cout<<arr[i]<<"";
+
+
+}
+
+
+
+//create array
+int arr[10];
+//now taking input
+int n=10;
+for(int i =0; i<n; i++){
+    cin>> arr[i];
+    cout<<"printing after input"<<endl;
+}
+
+
+//now double up every value
+for(int i =0; i<n; i++){
+    arr[i] = 2*arr[i];
+    cout<<"DOubles"<<endl; 
+     
+}
+
+//print
+for(int i=0; i<n; i+){
+    cout<<arr[i]<<" ";
+    
+}
+
+
+
+//cal. sum in array
+int arr[5];
+//taking input
+int n=5;
+for(int i =0; i<n; i++){
+    cin>> arr[i];
+}
+//cal. sum
+int sum=0;
+for(int i=0; i<n;i++){
+    sum= sum+arr[i];
+}
+cout<<"printing sum:"<<sum<<endl;
+
+return 0;
+
+
+int arr[5] = {2,3,4,5,4};
+int target=10;
+
+
+//0-> not found
+//1-> found
+
+
+int n=5;
+bool flag=0;
+for(int i=0; i<n;i++){
+    if(arr[i] == target){
+        //found
+        flag=1;
+        // cout<<"target found"<<endl;
+        break;
+    }
+
+
+
+}
+if(flag ==0){
+    cout<<"target found";
+
+}else{
+    cout<<"target not found"<<endl;
+}
+
+
+void printArray(int arr[], int size){
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+//present-> true;
+//absent-> false;
+
+bool linearSearch(int arr[], int size, int target){  //function creation
+    for(int i=0; i<n;i++){
+        if(arr[i]==target){
+            ///found
+            return true;
+        }
+    }
+    //not found
+    return false;
+}
+
+int main(){
+    int arr[5]={2,3,4,34,23};
+    int size=5;
+    int target=10;
+
+    bool ans= linearSearch(arr, size, target);
+    if(ans==1){
+        cout<<"target found"<<endl;
+
+    }else{
+        cout<<"Target not found"<<endl;
+    }
+
+    //function call
+    // printArray(arr, size);
+}
