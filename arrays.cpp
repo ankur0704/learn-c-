@@ -656,4 +656,127 @@ int main(){
 
     //function call
     // printArray(arr, size);
+};
+
+
+
+//count 0s and 1s in aray
+void countZeroOne(int arr[], int size){
+    int zeroCount=0;
+    int oneCount=0;
+
+    for(int i=0; i<size; i++){
+        if(arr[i] == 0){
+            zeroCount++;
+        }
+        if(arr[i]==1){
+            oneCount++;
+        }
+    }
+
+    cout<<"Zero count:"<<zeroCount<<endl;
+    cout<<"one count:"<<oneCount<<endl;
 }
+
+
+
+int main(){
+    int arr[] = {0,0,0,1,1,0,1,0,1,0,1,0,1,1,1};
+    //zero->6
+    //one->8
+
+    int size=15;
+    countZeroOne(arr,size);
+};
+
+
+
+
+//minimum number in an array:
+int main(){
+
+    //-2 to the power 31
+    cout<< INT_MIN<< endl;
+
+    //2 to the power 31-1
+    cout<< INT_MAX<< endl;
+}
+
+
+
+int findMinimumInArray(int arr[], int size){
+    //ans store variable
+    int minAns= INT_MAX;
+    for(int i=0; i<n; i++){
+        if(arr[i]< minAns){
+            minAns=arr[i];
+        }
+    }
+    return minAns;
+}
+int main(){
+    int arr[]={13,22,44,1,2};
+    int size=5;
+
+    int minimum= findMinimumInArray(arr, size);
+    cout<<"Minimum number is "<< minimum<<endl;
+}
+
+
+//reverse an array
+
+void reverseArray(int arr[], int size){
+    int left=0;
+    int right= size-1;
+
+                           //while loop  1st initilization
+    while(left<= right){   //condition
+        swap(arr[left], arr[right]);
+        left++;
+        right--;                  //updation
+    }
+
+    //printing the array;
+    for(int i=0; i<size; i++){
+        cout<<arr[i]<<" ";
+    }
+
+}
+
+
+  
+int main(){
+    int arr[6] = {10,20,30,40,50,60};
+    int size=6;
+
+    reverseArray(arr, size);
+};
+
+
+
+//Extreme print in array
+void extremePrint(int arr[], int size){
+    int left=0;
+    int right= size-1;
+
+    while(left<= right){
+        if(left==right){
+            cout<<arr[left]<<endl;
+        }else{
+            cout<<arr[left]<<endl;
+            cout<<arr[right]<< endl;
+
+        }
+        
+        left++;
+        right--;
+    }
+}
+
+int main(){
+    int arr[5]={13,4,3,12,3,};
+    int size=6;
+
+    extremePrint(arr, size);
+};
+
