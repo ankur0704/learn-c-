@@ -913,3 +913,38 @@ int main(){
 
 
 
+
+//negative el to left and +ve el to right
+
+void shiftNegativeOneSide(int arr[], int n){
+    int j=0;
+
+    for(int index=0; index<n; index++){
+        //index->to traverse entire array
+        if(arr[index]<0){
+            swap(arr[index], arr[j]);
+            j++;
+        }
+    }
+}
+
+
+
+int main(){
+    int arr[]= {23,-7,12,-10, -11,40,60}
+    int n=7;
+
+    shiftNegativeOneSide(arr,n);
+
+    //print
+    cout<<" Printing the array"<<endl;
+    for(int i=0; i<n; i++){
+        cout<< arr[i]<<" ";
+    }
+    return 0;
+};
+
+
+
+
+
